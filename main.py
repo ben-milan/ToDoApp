@@ -12,6 +12,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+
+    # Main window description
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(978, 581)
@@ -21,49 +24,61 @@ class Ui_MainWindow(object):
         self.menu = QtWidgets.QWidget(self.centralwidget)
         self.menu.setGeometry(QtCore.QRect(10, 140, 120, 201))
         self.menu.setObjectName("menu")
+
+        # Menu: First button "toDo_site"
         self.toDo_site = QtWidgets.QPushButton(self.menu)
         self.toDo_site.setGeometry(QtCore.QRect(0, 10, 111, 51))
         self.toDo_site.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                     "    color: #ffffff;\n"
+                                     "    border: 1px solid white;\n"
+                                     "}\n"
+                                     "\n"
+                                     "QPushButton:pressed {\n"
+                                     "   background-color:  #424549;\n"
+                                     "}")
         self.toDo_site.setObjectName("toDo_site")
+
+        # Menu: Second button "longterm_site"
         self.longterm_site = QtWidgets.QPushButton(self.menu)
         self.longterm_site.setGeometry(QtCore.QRect(0, 70, 111, 51))
         self.longterm_site.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                         "    color: #ffffff;\n"
+                                         "    border: 1px solid white;\n"
+                                         "}\n"
+                                         "\n"
+                                         "QPushButton:pressed {\n"
+                                         "   background-color:  #424549;\n"
+                                         "}")
         self.longterm_site.setObjectName("longterm_site")
+
+        # Menu: Third button "settings_site"
         self.settings_site = QtWidgets.QPushButton(self.menu)
         self.settings_site.setGeometry(QtCore.QRect(0, 130, 111, 51))
         self.settings_site.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                         "    color: #ffffff;\n"
+                                         "    border: 1px solid white;\n"
+                                         "}\n"
+                                         "\n"
+                                         "QPushButton:pressed {\n"
+                                         "   background-color:  #424549;\n"
+                                         "}")
         self.settings_site.setObjectName("settings_site")
+
+        # Header of the App
         self.header = QtWidgets.QWidget(self.centralwidget)
         self.header.setGeometry(QtCore.QRect(320, 20, 271, 91))
         self.header.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.header.setObjectName("header")
+
+        # Line below the title of the app
         self.line = QtWidgets.QFrame(self.header)
         self.line.setGeometry(QtCore.QRect(10, 60, 250, 3))
         self.line.setStyleSheet("background-color: #ffffff;")
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
+
+        # Title of the App
         self.program_title = QtWidgets.QLabel(self.header)
         self.program_title.setGeometry(QtCore.QRect(50, -10, 171, 91))
         font = QtGui.QFont()
@@ -71,104 +86,136 @@ class Ui_MainWindow(object):
         font.setPointSize(28)
         self.program_title.setFont(font)
         self.program_title.setStyleSheet("color: #ffffff;\n"
-"text-align: center;\n"
-"")
+                                         "text-align: center;\n"
+                                         "")
         self.program_title.setAlignment(QtCore.Qt.AlignCenter)
         self.program_title.setObjectName("program_title")
+
+        # Raising title & line
         self.program_title.raise_()
         self.line.raise_()
+
+        # Stacked widget for all the sites on the app
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
         self.stackedWidget.setGeometry(QtCore.QRect(140, 110, 611, 381))
         self.stackedWidget.setObjectName("stackedWidget")
+
+        # Widget: First page of the app "Homepage" toDo_overview
         self.toDo_list_page = QtWidgets.QWidget()
         self.toDo_list_page.setObjectName("toDo_list_page")
         self.toDo_list = QtWidgets.QWidget(self.toDo_list_page)
         self.toDo_list.setGeometry(QtCore.QRect(0, 0, 591, 281))
         self.toDo_list.setObjectName("toDo_list")
+
+        # First entry on the toDo_overview
         self.entry = QtWidgets.QWidget(self.toDo_list)
         self.entry.setGeometry(QtCore.QRect(10, 30, 591, 41))
         self.entry.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.entry.setObjectName("entry")
+
+        # State of the first entry
         self.state = QtWidgets.QPushButton(self.entry)
         self.state.setGeometry(QtCore.QRect(500, 10, 75, 31))
         self.state.setStyleSheet("QPushButton {\n"
-"    background-color: #86DC3D;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"")
+                                 "    background-color: #86DC3D;\n"
+                                 "    border: 1px solid white;\n"
+                                 "}\n"
+                                 "")
         self.state.setAutoDefault(False)
         self.state.setObjectName("state")
+
+        # Due_by of the first entry
         self.due_by = QtWidgets.QLabel(self.entry)
         self.due_by.setGeometry(QtCore.QRect(430, 10, 71, 31))
         self.due_by.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                  "border: 1px solid white;")
         self.due_by.setObjectName("due_by")
+
+        # Title of the first entry as a button to expand in full description mode
         self.title_button = QtWidgets.QPushButton(self.entry)
         self.title_button.setGeometry(QtCore.QRect(10, 10, 421, 31))
         self.title_button.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"    text-align: left;\n"
-"}\n"
-"")
+                                        "    color: #ffffff;\n"
+                                        "    border: 1px solid white;\n"
+                                        "    text-align: left;\n"
+                                        "}\n"
+                                        "")
         self.title_button.setAutoDefault(False)
         self.title_button.setObjectName("title_button")
+
+        # Second entry
         self.entry_2 = QtWidgets.QWidget(self.toDo_list)
         self.entry_2.setGeometry(QtCore.QRect(10, 71, 591, 41))
         self.entry_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.entry_2.setObjectName("entry_2")
+
+        # Second state
         self.state_2 = QtWidgets.QPushButton(self.entry_2)
         self.state_2.setGeometry(QtCore.QRect(500, 10, 75, 31))
         self.state_2.setStyleSheet("QPushButton {\n"
-"    background-color: #EF820D;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"")
+                                   "    background-color: #EF820D;\n"
+                                   "    border: 1px solid white;\n"
+                                   "}\n"
+                                   "")
         self.state_2.setAutoDefault(False)
         self.state_2.setObjectName("state_2")
+
+        # Second due_by
         self.due_by_2 = QtWidgets.QLabel(self.entry_2)
         self.due_by_2.setGeometry(QtCore.QRect(430, 10, 71, 31))
         self.due_by_2.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                    "border: 1px solid white;")
         self.due_by_2.setObjectName("due_by_2")
+
+        # Second title button
         self.title_button_2 = QtWidgets.QPushButton(self.entry_2)
         self.title_button_2.setGeometry(QtCore.QRect(10, 10, 421, 31))
         self.title_button_2.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"    text-align: left;\n"
-"}\n"
-"")
+                                          "    color: #ffffff;\n"
+                                          "    border: 1px solid white;\n"
+                                          "    text-align: left;\n"
+                                          "}\n"
+                                          "")
         self.title_button_2.setAutoDefault(False)
         self.title_button_2.setObjectName("title_button_2")
+
+        # Third entry
         self.entry_3 = QtWidgets.QWidget(self.toDo_list)
         self.entry_3.setGeometry(QtCore.QRect(10, 112, 591, 41))
         self.entry_3.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.entry_3.setObjectName("entry_3")
+
+        # Third state
         self.state_3 = QtWidgets.QPushButton(self.entry_3)
         self.state_3.setGeometry(QtCore.QRect(500, 10, 75, 31))
         self.state_3.setStyleSheet("QPushButton {\n"
-"    background-color: #fff200;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"")
+                                   "    background-color: #fff200;\n"
+                                   "    border: 1px solid white;\n"
+                                   "}\n"
+                                   "")
         self.state_3.setAutoDefault(False)
         self.state_3.setObjectName("state_3")
+
+        # Third due_by
         self.due_by_3 = QtWidgets.QLabel(self.entry_3)
         self.due_by_3.setGeometry(QtCore.QRect(430, 10, 71, 31))
         self.due_by_3.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                    "border: 1px solid white;")
         self.due_by_3.setObjectName("due_by_3")
+
+        # Third due_by
         self.title_button_3 = QtWidgets.QPushButton(self.entry_3)
         self.title_button_3.setGeometry(QtCore.QRect(10, 10, 421, 31))
         self.title_button_3.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"    text-align: left;\n"
-"}\n"
-"")
+                                          "    color: #ffffff;\n"
+                                          "    border: 1px solid white;\n"
+                                          "    text-align: left;\n"
+                                          "}\n"
+                                          "")
         self.title_button_3.setAutoDefault(False)
         self.title_button_3.setObjectName("title_button_3")
+
+        # Third title button
         self.titles = QtWidgets.QWidget(self.toDo_list)
         self.titles.setGeometry(QtCore.QRect(20, 16, 571, 21))
         self.titles.setObjectName("titles")
@@ -202,101 +249,129 @@ class Ui_MainWindow(object):
         self.state_title.setFont(font)
         self.state_title.setStyleSheet("color: #ffffff;")
         self.state_title.setObjectName("state_title")
+
+        # 4th entry
         self.entry_4 = QtWidgets.QWidget(self.toDo_list)
         self.entry_4.setGeometry(QtCore.QRect(10, 153, 591, 41))
         self.entry_4.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.entry_4.setObjectName("entry_4")
+
+        # 4th state
         self.state_4 = QtWidgets.QPushButton(self.entry_4)
         self.state_4.setGeometry(QtCore.QRect(500, 10, 75, 31))
         self.state_4.setStyleSheet("QPushButton {\n"
-"    background-color: #fff200;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"")
+                                   "    background-color: #fff200;\n"
+                                   "    border: 1px solid white;\n"
+                                   "}\n"
+                                   "")
         self.state_4.setAutoDefault(False)
         self.state_4.setObjectName("state_4")
+
+        #4th due_by
         self.due_by_4 = QtWidgets.QLabel(self.entry_4)
         self.due_by_4.setGeometry(QtCore.QRect(430, 10, 71, 31))
         self.due_by_4.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                    "border: 1px solid white;")
         self.due_by_4.setObjectName("due_by_4")
+
+        # 4th title_button
         self.title_button_4 = QtWidgets.QPushButton(self.entry_4)
         self.title_button_4.setGeometry(QtCore.QRect(10, 10, 421, 31))
         self.title_button_4.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"    text-align: left;\n"
-"}\n"
-"")
+                                          "    color: #ffffff;\n"
+                                          "    border: 1px solid white;\n"
+                                          "    text-align: left;\n"
+                                          "}\n"
+                                          "")
         self.title_button_4.setAutoDefault(False)
         self.title_button_4.setObjectName("title_button_4")
+
+        # 5th entry
         self.entry_5 = QtWidgets.QWidget(self.toDo_list)
         self.entry_5.setGeometry(QtCore.QRect(10, 194, 591, 41))
         self.entry_5.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.entry_5.setObjectName("entry_5")
+
+        # 5th state
         self.state_5 = QtWidgets.QPushButton(self.entry_5)
         self.state_5.setGeometry(QtCore.QRect(500, 10, 75, 31))
         self.state_5.setStyleSheet("QPushButton {\n"
-"    background-color: #fff200;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"")
+                                   "    background-color: #fff200;\n"
+                                   "    border: 1px solid white;\n"
+                                   "}\n"
+                                   "")
         self.state_5.setAutoDefault(False)
         self.state_5.setObjectName("state_5")
+
+        # 5th due_by
         self.due_by_5 = QtWidgets.QLabel(self.entry_5)
         self.due_by_5.setGeometry(QtCore.QRect(430, 10, 71, 31))
         self.due_by_5.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                    "border: 1px solid white;")
         self.due_by_5.setObjectName("due_by_5")
+
+        # 5th title_button
         self.title_button_5 = QtWidgets.QPushButton(self.entry_5)
         self.title_button_5.setGeometry(QtCore.QRect(10, 10, 421, 31))
         self.title_button_5.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"    text-align: left;\n"
-"}\n"
-"")
+                                          "    color: #ffffff;\n"
+                                          "    border: 1px solid white;\n"
+                                          "    text-align: left;\n"
+                                          "}\n"
+                                          "")
         self.title_button_5.setAutoDefault(False)
         self.title_button_5.setObjectName("title_button_5")
+
+        # 6th entry
         self.entry_6 = QtWidgets.QWidget(self.toDo_list)
         self.entry_6.setGeometry(QtCore.QRect(10, 235, 591, 41))
         self.entry_6.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.entry_6.setObjectName("entry_6")
+
+        # 6th state
         self.state_6 = QtWidgets.QPushButton(self.entry_6)
         self.state_6.setGeometry(QtCore.QRect(500, 10, 75, 31))
         self.state_6.setStyleSheet("QPushButton {\n"
-"    background-color: #fff200;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"")
+                                   "    background-color: #fff200;\n"
+                                   "    border: 1px solid white;\n"
+                                   "}\n"
+                                   "")
         self.state_6.setAutoDefault(False)
         self.state_6.setObjectName("state_6")
+
+        # 6th due_by
         self.due_by_6 = QtWidgets.QLabel(self.entry_6)
         self.due_by_6.setGeometry(QtCore.QRect(430, 10, 71, 31))
         self.due_by_6.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                    "border: 1px solid white;")
         self.due_by_6.setObjectName("due_by_6")
+
+        # 6th title_button
         self.title_button_6 = QtWidgets.QPushButton(self.entry_6)
         self.title_button_6.setGeometry(QtCore.QRect(10, 10, 421, 31))
         self.title_button_6.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"    text-align: left;\n"
-"}\n"
-"")
+                                          "    color: #ffffff;\n"
+                                          "    border: 1px solid white;\n"
+                                          "    text-align: left;\n"
+                                          "}\n"
+                                          "")
         self.title_button_6.setAutoDefault(False)
         self.title_button_6.setObjectName("title_button_6")
+
+        # "Add" button
         self.pushButton = QtWidgets.QPushButton(self.toDo_list_page)
         self.pushButton.setGeometry(QtCore.QRect(260, 330, 81, 41))
         self.pushButton.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                      "    color: #ffffff;\n"
+                                      "    border: 1px solid white;\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:pressed {\n"
+                                      "   background-color:  #424549;\n"
+                                      "}")
         self.pushButton.setObjectName("pushButton")
+
+        # Next site on widget: Form for adding a Todo_
         self.stackedWidget.addWidget(self.toDo_list_page)
         self.form_page = QtWidgets.QWidget()
         self.form_page.setObjectName("form_page")
@@ -304,76 +379,102 @@ class Ui_MainWindow(object):
         self.toDo_form.setGeometry(QtCore.QRect(-10, 40, 621, 211))
         self.toDo_form.setStyleSheet("")
         self.toDo_form.setObjectName("toDo_form")
+
+
         self.formLayoutWidget = QtWidgets.QWidget(self.toDo_form)
         self.formLayoutWidget.setGeometry(QtCore.QRect(10, 0, 591, 202))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setObjectName("formLayout")
+
+        # Title of the ToDo_
         self.lineEdit = QtWidgets.QLineEdit(self.formLayoutWidget)
         self.lineEdit.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                    "border: 1px solid white;")
         self.lineEdit.setText("")
         self.lineEdit.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit.setObjectName("lineEdit")
+
+        # Date label
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.SpanningRole, self.lineEdit)
         self.label_2 = QtWidgets.QLabel(self.formLayoutWidget)
         self.label_2.setStyleSheet("color: #ffffff;")
         self.label_2.setObjectName("label_2")
+
+        # Date getter
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_2)
         self.dateEdit = QtWidgets.QDateEdit(self.formLayoutWidget)
         self.dateEdit.setStyleSheet("color: #ffffff;")
         self.dateEdit.setObjectName("dateEdit")
+
+        # Time label
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.dateEdit)
         self.label_3 = QtWidgets.QLabel(self.formLayoutWidget)
         self.label_3.setStyleSheet("color: #ffffff;")
         self.label_3.setObjectName("label_3")
+
+        # Time getter
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_3)
         self.timeEdit = QtWidgets.QTimeEdit(self.formLayoutWidget)
         self.timeEdit.setStyleSheet("color: #ffffff;")
         self.timeEdit.setObjectName("timeEdit")
+
+        # Description box
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.timeEdit)
         self.textEdit = QtWidgets.QTextEdit(self.formLayoutWidget)
         self.textEdit.setStyleSheet("color: #ffffff;")
         self.textEdit.setObjectName("textEdit")
+
+        # Description label
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.textEdit)
         self.label_4 = QtWidgets.QLabel(self.formLayoutWidget)
         self.label_4.setStyleSheet("color: #ffffff;")
         self.label_4.setObjectName("label_4")
+
+        # Priority label
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_4)
         self.label = QtWidgets.QLabel(self.formLayoutWidget)
         self.label.setStyleSheet("border: none;\n"
-"color: #ffffff;")
+                                 "color: #ffffff;")
         self.label.setObjectName("label")
+
+        # Priority dropdown
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label)
         self.comboBox = QtWidgets.QComboBox(self.formLayoutWidget)
         self.comboBox.setStyleSheet("QComboBox{\n"
-"    border: 1px solid white;\n"
-"    color: #ffffff;\n"
-"\n"
-"}")
+                                    "    border: 1px solid white;\n"
+                                    "    color: #ffffff;\n"
+                                    "\n"
+                                    "}")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+
+        # "Add" button to add the ToDo_ to database
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.comboBox)
         self.pushButton_2 = QtWidgets.QPushButton(self.form_page)
         self.pushButton_2.setGeometry(QtCore.QRect(280, 260, 81, 41))
         self.pushButton_2.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                        "    color: #ffffff;\n"
+                                        "    border: 1px solid white;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:pressed {\n"
+                                        "   background-color:  #424549;\n"
+                                        "}")
         self.pushButton_2.setObjectName("pushButton_2")
+
+        # Third page of the stacked widget "checkmark"
         self.stackedWidget.addWidget(self.form_page)
         self.checkmark_page = QtWidgets.QWidget()
         self.checkmark_page.setObjectName("checkmark_page")
         self.checkmark = QtWidgets.QWidget(self.checkmark_page)
+
+        #
         self.checkmark.setGeometry(QtCore.QRect(0, 0, 621, 231))
         self.checkmark.setStyleSheet("")
         self.checkmark.setObjectName("checkmark")
@@ -396,39 +497,41 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.formLayoutWidget_2)
         self.label_5.setMaximumSize(QtCore.QSize(20, 20))
         self.label_5.setText("")
-        self.label_5.setPixmap(QtGui.QPixmap("C:\\Users\\Ben-Milan\\OneDrive\\Dokumente\\Qt_Designer\\../../../PycharmProjects/ToDoApp/img/user.png"))
+        self.label_5.setPixmap(QtGui.QPixmap(
+            "C:\\Users\\Ben-Milan\\OneDrive\\Dokumente\\Qt_Designer\\../../../PycharmProjects/ToDoApp/img/user.png"))
         self.label_5.setScaledContents(True)
         self.label_5.setObjectName("label_5")
         self.login_fields.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_5)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.lineEdit_2.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                      "border: 1px solid white;")
         self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.login_fields.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_2)
         self.label_6 = QtWidgets.QLabel(self.formLayoutWidget_2)
         self.label_6.setMaximumSize(QtCore.QSize(20, 20))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("C:\\Users\\Ben-Milan\\OneDrive\\Dokumente\\Qt_Designer\\../../../PycharmProjects/ToDoApp/img/padlock.png"))
+        self.label_6.setPixmap(QtGui.QPixmap(
+            "C:\\Users\\Ben-Milan\\OneDrive\\Dokumente\\Qt_Designer\\../../../PycharmProjects/ToDoApp/img/padlock.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.login_fields.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_6)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.lineEdit_3.setStyleSheet("color: #ffffff;\n"
-"border: 1px solid white;")
+                                      "border: 1px solid white;")
         self.lineEdit_3.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.login_fields.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
         self.login_button = QtWidgets.QPushButton(self.login)
         self.login_button.setGeometry(QtCore.QRect(290, 130, 51, 23))
         self.login_button.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                        "    color: #ffffff;\n"
+                                        "    border: 1px solid white;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:pressed {\n"
+                                        "   background-color:  #424549;\n"
+                                        "}")
         self.login_button.setObjectName("login_button")
         self.stackedWidget.addWidget(self.login_page)
         self.longterm_Goals_page = QtWidgets.QWidget()
@@ -440,8 +543,8 @@ class Ui_MainWindow(object):
         self.scrollArea = QtWidgets.QScrollArea(self.longterm_Goals)
         self.scrollArea.setGeometry(QtCore.QRect(120, 30, 391, 311))
         self.scrollArea.setStyleSheet("QScrollArea{\n"
-"   border: 1px solid transparent;\n"
-"}")
+                                      "   border: 1px solid transparent;\n"
+                                      "}")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
@@ -450,82 +553,82 @@ class Ui_MainWindow(object):
         self.groupBox_3 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_3.setGeometry(QtCore.QRect(0, 140, 161, 131))
         self.groupBox_3.setStyleSheet("QGroupBox {\n"
-"   color: white;\n"
-"}")
+                                      "   color: white;\n"
+                                      "}")
         self.groupBox_3.setObjectName("groupBox_3")
         self.label_9 = QtWidgets.QLabel(self.groupBox_3)
         self.label_9.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_9.setStyleSheet("border: 1px solid white;\n"
-"border-radius: 5px;\n"
-"background-color: #B43757;")
+                                   "border-radius: 5px;\n"
+                                   "background-color: #B43757;")
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
         self.textEdit_4 = QtWidgets.QTextEdit(self.groupBox_3)
         self.textEdit_4.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_4.setStyleSheet("border: transparent;\n"
-"text-align: center;")
+                                      "text-align: center;")
         self.textEdit_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_4.setUndoRedoEnabled(False)
         self.textEdit_4.setObjectName("textEdit_4")
         self.groupBox_4 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_4.setGeometry(QtCore.QRect(210, 170, 161, 131))
         self.groupBox_4.setStyleSheet("QGroupBox {\n"
-"   color: white;\n"
-"}")
+                                      "   color: white;\n"
+                                      "}")
         self.groupBox_4.setObjectName("groupBox_4")
         self.label_10 = QtWidgets.QLabel(self.groupBox_4)
         self.label_10.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_10.setStyleSheet("background-color: #6F2DA8;\n"
-"border: 1px solid white;\n"
-"border-radius: 5px;\n"
-"")
+                                    "border: 1px solid white;\n"
+                                    "border-radius: 5px;\n"
+                                    "")
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
         self.textEdit_5 = QtWidgets.QTextEdit(self.groupBox_4)
         self.textEdit_5.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_5.setStyleSheet("border: transparent;\n"
-"text-align: center;")
+                                      "text-align: center;")
         self.textEdit_5.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_5.setUndoRedoEnabled(False)
         self.textEdit_5.setObjectName("textEdit_5")
         self.groupBox_2 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_2.setGeometry(QtCore.QRect(210, 30, 161, 131))
         self.groupBox_2.setStyleSheet("QGroupBox {\n"
-"   color: white;\n"
-"}")
+                                      "   color: white;\n"
+                                      "}")
         self.groupBox_2.setObjectName("groupBox_2")
         self.label_8 = QtWidgets.QLabel(self.groupBox_2)
         self.label_8.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_8.setStyleSheet("background-color: #6F2DA8;\n"
-"border: 1px solid white;\n"
-"border-radius: 5px;")
+                                   "border: 1px solid white;\n"
+                                   "border-radius: 5px;")
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName("label_8")
         self.textEdit_3 = QtWidgets.QTextEdit(self.groupBox_2)
         self.textEdit_3.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_3.setStyleSheet("border: transparent;\n"
-"text-align: center;")
+                                      "text-align: center;")
         self.textEdit_3.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_3.setUndoRedoEnabled(False)
         self.textEdit_3.setObjectName("textEdit_3")
         self.groupBox = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox.setGeometry(QtCore.QRect(0, 0, 161, 131))
         self.groupBox.setStyleSheet("QGroupBox {\n"
-"   color: white;\n"
-"}")
+                                    "   color: white;\n"
+                                    "}")
         self.groupBox.setObjectName("groupBox")
         self.textEdit_2 = QtWidgets.QTextEdit(self.groupBox)
         self.textEdit_2.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_2.setStyleSheet("border: transparent;\n"
-"text-align: center;")
+                                      "text-align: center;")
         self.textEdit_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_2.setUndoRedoEnabled(False)
         self.textEdit_2.setObjectName("textEdit_2")
         self.label_7 = QtWidgets.QLabel(self.groupBox)
         self.label_7.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_7.setStyleSheet("border: 1px solid white;\n"
-"border-radius: 5px;\n"
-"background-color: #6F2DA8;")
+                                   "border-radius: 5px;\n"
+                                   "background-color: #6F2DA8;")
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -539,13 +642,13 @@ class Ui_MainWindow(object):
         self.light_mode_button = QtWidgets.QPushButton(self.settings)
         self.light_mode_button.setGeometry(QtCore.QRect(270, 40, 75, 23))
         self.light_mode_button.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                             "    color: #ffffff;\n"
+                                             "    border: 1px solid white;\n"
+                                             "}\n"
+                                             "\n"
+                                             "QPushButton:pressed {\n"
+                                             "   background-color:  #424549;\n"
+                                             "}")
         self.light_mode_button.setObjectName("light_mode_button")
         self.change_user_info = QtWidgets.QGroupBox(self.settings)
         self.change_user_info.setGeometry(QtCore.QRect(200, 80, 221, 141))
@@ -563,13 +666,13 @@ class Ui_MainWindow(object):
         self.ajust_button = QtWidgets.QPushButton(self.change_user_info)
         self.ajust_button.setGeometry(QtCore.QRect(80, 100, 51, 23))
         self.ajust_button.setStyleSheet("QPushButton {\n"
-"    color: #ffffff;\n"
-"    border: 1px solid white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"   background-color:  #424549;\n"
-"}")
+                                        "    color: #ffffff;\n"
+                                        "    border: 1px solid white;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:pressed {\n"
+                                        "   background-color:  #424549;\n"
+                                        "}")
         self.ajust_button.setObjectName("ajust_button")
         self.stackedWidget.addWidget(self.settings_page)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -585,6 +688,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    # Variables to change for dynamic App
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -601,7 +705,8 @@ class Ui_MainWindow(object):
         self.state_3.setText(_translate("MainWindow", "Pending..."))
         self.due_by_3.setText(_translate("MainWindow", "06.01.24"))
         self.title_button_3.setText(_translate("MainWindow", " ToDo3"))
-        self.toDo_title.setText(_translate("MainWindow", "Title:                                                                      "))
+        self.toDo_title.setText(
+            _translate("MainWindow", "Title:                                                                      "))
         self.due_by_title.setText(_translate("MainWindow", "Due by:"))
         self.state_title.setText(_translate("MainWindow", "State:"))
         self.state_4.setText(_translate("MainWindow", "Pending..."))
@@ -616,11 +721,12 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Add"))
         self.label_2.setText(_translate("MainWindow", "Date:"))
         self.label_3.setText(_translate("MainWindow", "Time:"))
-        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textEdit.setHtml(_translate("MainWindow",
+                                         "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                         "p, li { white-space: pre-wrap; }\n"
+                                         "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+                                         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.label_4.setText(_translate("MainWindow", "Description:"))
         self.label.setText(_translate("MainWindow", "Priority:"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Choose..."))
@@ -632,31 +738,35 @@ class Ui_MainWindow(object):
         self.login_button.setText(_translate("MainWindow", "Login"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Goal3"))
         self.label_9.setText(_translate("MainWindow", "Achieved"))
-        self.textEdit_4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
+        self.textEdit_4.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
         self.groupBox_4.setTitle(_translate("MainWindow", "Goal3"))
         self.label_10.setText(_translate("MainWindow", "Active"))
-        self.textEdit_5.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
+        self.textEdit_5.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Goal2"))
         self.label_8.setText(_translate("MainWindow", "Active"))
-        self.textEdit_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
+        self.textEdit_3.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
         self.groupBox.setTitle(_translate("MainWindow", "Goal1"))
-        self.textEdit_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
+        self.textEdit_2.setHtml(_translate("MainWindow",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Some long text which can be written right here on the spot. But that long it shouldn\'t be cause you have not that much space.</p></body></html>"))
         self.label_7.setText(_translate("MainWindow", "Active"))
         self.light_mode_button.setText(_translate("MainWindow", "Light Mode"))
         self.change_user_info.setTitle(_translate("MainWindow", " Change user Information"))
@@ -665,6 +775,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
