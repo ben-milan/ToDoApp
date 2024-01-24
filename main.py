@@ -371,6 +371,10 @@ class Ui_MainWindow(object):
                                       "}")
         self.pushButton.setObjectName("pushButton")
 
+        # Switch to add Todo_ page
+        self.pushButton.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+
+
         # Next site on widget: Form for adding a Todo_
         self.stackedWidget.addWidget(self.toDo_list_page)
         self.form_page = QtWidgets.QWidget()
