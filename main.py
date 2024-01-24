@@ -474,20 +474,25 @@ class Ui_MainWindow(object):
         self.checkmark_page.setObjectName("checkmark_page")
         self.checkmark = QtWidgets.QWidget(self.checkmark_page)
 
-        #
+        # Checkmark video site
         self.checkmark.setGeometry(QtCore.QRect(0, 0, 621, 231))
         self.checkmark.setStyleSheet("")
         self.checkmark.setObjectName("checkmark")
         self.widget = QtWidgets.QWidget(self.checkmark)
+
         self.widget.setGeometry(QtCore.QRect(190, 50, 251, 151))
         self.widget.setObjectName("widget")
         self.stackedWidget.addWidget(self.checkmark_page)
+
+        # Login Page
         self.login_page = QtWidgets.QWidget()
         self.login_page.setObjectName("login_page")
         self.login = QtWidgets.QWidget(self.login_page)
         self.login.setGeometry(QtCore.QRect(0, 0, 621, 231))
         self.login.setStyleSheet("")
         self.login.setObjectName("login")
+
+        # User icon
         self.formLayoutWidget_2 = QtWidgets.QWidget(self.login)
         self.formLayoutWidget_2.setGeometry(QtCore.QRect(200, 70, 211, 61))
         self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
@@ -497,31 +502,37 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.formLayoutWidget_2)
         self.label_5.setMaximumSize(QtCore.QSize(20, 20))
         self.label_5.setText("")
-        self.label_5.setPixmap(QtGui.QPixmap(
-            "C:\\Users\\Ben-Milan\\OneDrive\\Dokumente\\Qt_Designer\\../../../PycharmProjects/ToDoApp/img/user.png"))
+        self.label_5.setPixmap(QtGui.QPixmap("./img/user.png"))
         self.label_5.setScaledContents(True)
         self.label_5.setObjectName("label_5")
         self.login_fields.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_5)
+
+        # username input field
         self.lineEdit_2 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.lineEdit_2.setStyleSheet("color: #ffffff;\n"
                                       "border: 1px solid white;")
         self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.login_fields.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_2)
+
+        # Password icon
         self.label_6 = QtWidgets.QLabel(self.formLayoutWidget_2)
         self.label_6.setMaximumSize(QtCore.QSize(20, 20))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap(
-            "C:\\Users\\Ben-Milan\\OneDrive\\Dokumente\\Qt_Designer\\../../../PycharmProjects/ToDoApp/img/padlock.png"))
+        self.label_6.setPixmap(QtGui.QPixmap("./img/padlock.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.login_fields.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_6)
+
+        # Password input field
         self.lineEdit_3 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.lineEdit_3.setStyleSheet("color: #ffffff;\n"
                                       "border: 1px solid white;")
         self.lineEdit_3.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.login_fields.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
+
+        # Login button
         self.login_button = QtWidgets.QPushButton(self.login)
         self.login_button.setGeometry(QtCore.QRect(290, 130, 51, 23))
         self.login_button.setStyleSheet("QPushButton {\n"
@@ -534,12 +545,16 @@ class Ui_MainWindow(object):
                                         "}")
         self.login_button.setObjectName("login_button")
         self.stackedWidget.addWidget(self.login_page)
+
+        # Longterm goals page
         self.longterm_Goals_page = QtWidgets.QWidget()
         self.longterm_Goals_page.setObjectName("longterm_Goals_page")
         self.longterm_Goals = QtWidgets.QWidget(self.longterm_Goals_page)
         self.longterm_Goals.setGeometry(QtCore.QRect(0, 0, 621, 351))
         self.longterm_Goals.setStyleSheet("")
         self.longterm_Goals.setObjectName("longterm_Goals")
+
+        # Scrollable area where the longterm goals are
         self.scrollArea = QtWidgets.QScrollArea(self.longterm_Goals)
         self.scrollArea.setGeometry(QtCore.QRect(120, 30, 391, 311))
         self.scrollArea.setStyleSheet("QScrollArea{\n"
@@ -547,15 +562,20 @@ class Ui_MainWindow(object):
                                       "}")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
+
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 389, 309))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+
+        # First goal
         self.groupBox_3 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_3.setGeometry(QtCore.QRect(0, 140, 161, 131))
         self.groupBox_3.setStyleSheet("QGroupBox {\n"
                                       "   color: white;\n"
                                       "}")
         self.groupBox_3.setObjectName("groupBox_3")
+
+        # Button for achieved or not yet achieved
         self.label_9 = QtWidgets.QLabel(self.groupBox_3)
         self.label_9.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_9.setStyleSheet("border: 1px solid white;\n"
@@ -563,6 +583,8 @@ class Ui_MainWindow(object):
                                    "background-color: #B43757;")
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
+
+        # Text of the goal
         self.textEdit_4 = QtWidgets.QTextEdit(self.groupBox_3)
         self.textEdit_4.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_4.setStyleSheet("border: transparent;\n"
@@ -570,12 +592,16 @@ class Ui_MainWindow(object):
         self.textEdit_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_4.setUndoRedoEnabled(False)
         self.textEdit_4.setObjectName("textEdit_4")
+
+        # 2nd goal
         self.groupBox_4 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_4.setGeometry(QtCore.QRect(210, 170, 161, 131))
         self.groupBox_4.setStyleSheet("QGroupBox {\n"
                                       "   color: white;\n"
                                       "}")
         self.groupBox_4.setObjectName("groupBox_4")
+
+        # 2nd button
         self.label_10 = QtWidgets.QLabel(self.groupBox_4)
         self.label_10.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_10.setStyleSheet("background-color: #6F2DA8;\n"
@@ -584,6 +610,8 @@ class Ui_MainWindow(object):
                                     "")
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
+
+        # 2nd text field
         self.textEdit_5 = QtWidgets.QTextEdit(self.groupBox_4)
         self.textEdit_5.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_5.setStyleSheet("border: transparent;\n"
@@ -591,12 +619,16 @@ class Ui_MainWindow(object):
         self.textEdit_5.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_5.setUndoRedoEnabled(False)
         self.textEdit_5.setObjectName("textEdit_5")
+
+        # 3d goal
         self.groupBox_2 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_2.setGeometry(QtCore.QRect(210, 30, 161, 131))
         self.groupBox_2.setStyleSheet("QGroupBox {\n"
                                       "   color: white;\n"
                                       "}")
         self.groupBox_2.setObjectName("groupBox_2")
+
+        # 3d button
         self.label_8 = QtWidgets.QLabel(self.groupBox_2)
         self.label_8.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_8.setStyleSheet("background-color: #6F2DA8;\n"
@@ -604,6 +636,8 @@ class Ui_MainWindow(object):
                                    "border-radius: 5px;")
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName("label_8")
+
+        # 3d text field
         self.textEdit_3 = QtWidgets.QTextEdit(self.groupBox_2)
         self.textEdit_3.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_3.setStyleSheet("border: transparent;\n"
@@ -611,12 +645,16 @@ class Ui_MainWindow(object):
         self.textEdit_3.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_3.setUndoRedoEnabled(False)
         self.textEdit_3.setObjectName("textEdit_3")
+
+        # 4th goal
         self.groupBox = QtWidgets.QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox.setGeometry(QtCore.QRect(0, 0, 161, 131))
         self.groupBox.setStyleSheet("QGroupBox {\n"
                                     "   color: white;\n"
                                     "}")
         self.groupBox.setObjectName("groupBox")
+
+        # 4th text field
         self.textEdit_2 = QtWidgets.QTextEdit(self.groupBox)
         self.textEdit_2.setGeometry(QtCore.QRect(10, 20, 141, 71))
         self.textEdit_2.setStyleSheet("border: transparent;\n"
@@ -624,6 +662,8 @@ class Ui_MainWindow(object):
         self.textEdit_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_2.setUndoRedoEnabled(False)
         self.textEdit_2.setObjectName("textEdit_2")
+
+        # 4th button
         self.label_7 = QtWidgets.QLabel(self.groupBox)
         self.label_7.setGeometry(QtCore.QRect(10, 93, 141, 31))
         self.label_7.setStyleSheet("border: 1px solid white;\n"
@@ -633,12 +673,16 @@ class Ui_MainWindow(object):
         self.label_7.setObjectName("label_7")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.stackedWidget.addWidget(self.longterm_Goals_page)
+
+        # Settings page
         self.settings_page = QtWidgets.QWidget()
         self.settings_page.setObjectName("settings_page")
         self.settings = QtWidgets.QWidget(self.settings_page)
         self.settings.setGeometry(QtCore.QRect(0, 0, 621, 351))
         self.settings.setStyleSheet("")
         self.settings.setObjectName("settings")
+
+        # Light mode button
         self.light_mode_button = QtWidgets.QPushButton(self.settings)
         self.light_mode_button.setGeometry(QtCore.QRect(270, 40, 75, 23))
         self.light_mode_button.setStyleSheet("QPushButton {\n"
@@ -650,19 +694,27 @@ class Ui_MainWindow(object):
                                              "   background-color:  #424549;\n"
                                              "}")
         self.light_mode_button.setObjectName("light_mode_button")
+
+        # Change user information page
         self.change_user_info = QtWidgets.QGroupBox(self.settings)
         self.change_user_info.setGeometry(QtCore.QRect(200, 80, 221, 141))
         self.change_user_info.setStyleSheet("color: white;")
         self.change_user_info.setAlignment(QtCore.Qt.AlignCenter)
         self.change_user_info.setObjectName("change_user_info")
+
+        # Change username line edit
         self.change_user_name = QtWidgets.QLineEdit(self.change_user_info)
         self.change_user_name.setGeometry(QtCore.QRect(10, 35, 201, 20))
         self.change_user_name.setAlignment(QtCore.Qt.AlignCenter)
         self.change_user_name.setObjectName("change_user_name")
+
+        # Change user pwd line
         self.change_password = QtWidgets.QLineEdit(self.change_user_info)
         self.change_password.setGeometry(QtCore.QRect(10, 65, 201, 20))
         self.change_password.setAlignment(QtCore.Qt.AlignCenter)
         self.change_password.setObjectName("change_password")
+
+        # Adjust button
         self.ajust_button = QtWidgets.QPushButton(self.change_user_info)
         self.ajust_button.setGeometry(QtCore.QRect(80, 100, 51, 23))
         self.ajust_button.setStyleSheet("QPushButton {\n"
@@ -675,6 +727,8 @@ class Ui_MainWindow(object):
                                         "}")
         self.ajust_button.setObjectName("ajust_button")
         self.stackedWidget.addWidget(self.settings_page)
+
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 978, 21))
