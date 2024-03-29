@@ -1,0 +1,93 @@
+from PyQt5 import QtWidgets, QtCore
+
+class Entry(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.initUI()
+
+    def initUI(self):
+        self.setGeometry(QtCore.QRect(10, 30, 591, 41))
+        self.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.setObjectName("entry")
+
+        self.title_button = QtWidgets.QPushButton(self)
+        self.title_button.setGeometry(QtCore.QRect(10, 10, 421, 31))
+        self.title_button.setStyleSheet("QPushButton {\n"
+                                        "    color: #ffffff;\n"
+                                        "    border: 1px solid white;\n"
+                                        "    text-align: left;\n"
+                                        "}\n"
+                                        "")
+
+        self.state = QtWidgets.QPushButton(self)
+        self.state.setGeometry(QtCore.QRect(500, 10, 75, 31))
+        self.state.setStyleSheet("QPushButton {\n"
+                                  "    background-color: #ff0000;\n"
+                                  "    border: 1px solid white;\n"
+                                  "}\n"
+                                  "")
+
+        self.due_by_label = QtWidgets.QLabel(self)
+        self.due_by_label.setGeometry(QtCore.QRect(430, 10, 71, 31))
+        self.due_by_label.setStyleSheet("color: #ffffff;\n"
+                                         "border: 1px solid white;")
+
+    def setTitle(self, title):
+        self.title_button.setText(title)
+
+    def setDate(self, date):
+        self.due_by_label.setText(date)
+
+class ToDoList(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('To-Do List')
+        self.setGeometry(100, 100, 600, 400)
+
+        self.toDo_list = QtWidgets.QWidget(self)
+        self.toDo_list.setGeometry(QtCore.QRect(10, 10, 581, 381))
+
+        self.entries = []
+
+    def addEntry(self, title, date):
+        entry = Entry(self.toDo_list)
+        entry.setTitle(title)
+        entry.setDate(date)
+
+        state = entry.state
+        state.clicked.connect(lambda: self.handleStateButton(state, entry))
+
+        self.entries.append(entry)
+
+    def handleStateButton(self, button, entry):
+        button.setStyleSheet("QPushButton {\n"
+                             "    background-color: #86DC3D;\n"
+                             "    border: 1px solid white;\n"
+                             "}\n"
+                             "")
+
+        # Now you can access entry to manipulate the clicked entry
+
+def main():
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    toDoList = ToDoList()
+
+    data = [
+        {'title': 'Titlee1', 'date': '01.01.2024'},
+        {'title': 'Titlee4', 'date': '12.03.2024'},
+        {'title': 'Titlee2', 'date': '09.03.2024'},
+        {'title': 'Titlee3', 'date': '15.11.2024'}]
+
+    for entry_data in data:
+        toDoList.addEntry(entry_data['title'], entry_data['date'])
+
+    toDoList.show()
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
