@@ -1,2 +1,2 @@
 # ToDoApp
-## This App is not coomplete yet.
+## This App is not complete yet.
